@@ -1,0 +1,11 @@
+﻿part_id,part_name,description,manufacturer,price (USD),weight (kg)
+1001,Axle - Heavy Equipment,High-load bearing axle for construction vehicles,Caterpillar,3500,500
+1002,Boom Arm - Excavator,Reinforced steel boom arm for excavation,Komatsu,7200,1200
+1003,Bulldozer Blade,Heavy-duty blade for pushing material,John Deere,5600,1500
+1004,Crane Hook,Industrial-grade hook for cranes,Liebherr,1800,300
+1005,Excavator Bucket,Large capacity bucket for digging,Hitachi,4300,900
+1006,Gearbox - Heavy Machinery,High-torque gearbox for machines,Volvo,8900,700
+1007,Heavy Machinery Engine,Diesel engine for heavy-duty machines,Caterpillar,15000,2200
+1008,Hydraulic Cylinder,Hydraulic actuator for movement control,Bosch Rexroth,2100,400
+1009,Loader Tire,Off-road tire for loaders,Michelin,1100,250
+1010,Bulldozer Undercarriage,Track system for bulldozers,Komatsu,9500,1800

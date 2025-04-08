@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual Environment
+.venv/
+env/
+venv/
+
+# Model files (optional)
+*.h5
+*.hdf5
+
+# Streamlit secrets
+.secrets.toml
+
+# Others
+.DS_Store
+*.log
