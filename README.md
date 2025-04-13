@@ -7,11 +7,9 @@ A deep learning web app that classifies images of heavy machine parts using a pr
 
 ## Project Overview
 
-# Heavy Machine Parts Classifier
-
 A deep learning web app that classifies images of heavy machine parts using a pre-trained TensorFlow model, built and deployed with Streamlit.
 
-Dependencies
+## Dependencies
 
 pip install -r requirements.txt
 
