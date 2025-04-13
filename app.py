@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import json
 
-# 📂 Load labels automatically
+# Load labels automatically
 with open("labels.json", "r") as f:
     labels = json.load(f)
 
@@ -15,7 +15,7 @@ model = tf.keras.models.load_model('heavy_machine_parts_model.h5')
 # Load parts database
 parts_df = pd.read_csv('parts_detail.csv')
 
-# ➡️ Create a clean column for matching
+# Create a clean column for matching
 parts_df['part_name_clean'] = parts_df['part_name'].str.replace("_", " ").str.lower().str.strip()
 
 # Function to predict
@@ -29,7 +29,7 @@ def predict_part(img_path):
     return predicted_class
 
 # Streamlit UI
-st.title("🛠️ Heavy Machine Parts Classifier")
+st.title("Heavy Machine Parts Identifier")
 
 uploaded_file = st.file_uploader("Upload an image of the machine part", type=["jpg", "jpeg", "png"])
 
@@ -46,24 +46,24 @@ if uploaded_file is not None:
     predicted_class = np.argmax(predictions)
     predicted_label = labels[predicted_class]
 
-    # 🔥 Clean the predicted label
+    # Clean the predicted label
     predicted_label_clean = predicted_label.replace("_", " ").lower().strip()
 
     # Find matching part
     predicted_part = parts_df.loc[parts_df['part_name_clean'] == predicted_label_clean]
 
-    st.subheader("🎯 Prediction Result:")
+    st.subheader("Prediction Result:")
 
-        # Show prediction probabilities
+    # Show prediction probabilities
     prob_df = pd.DataFrame(predictions[0], index=labels, columns=["Probability"])
     st.dataframe(prob_df.style.highlight_max(axis=0))
 
     # Show predicted label
     st.success(f"**Predicted Part:** {labels[predicted_class]}")
 
-    # ✅ Show only prediction result
+    # Show only prediction result
     if not predicted_part.empty:
-        st.success(f"✅ Part Found: {predicted_part.iloc[0]['part_name']}")
+        st.success(f"Part Found: {predicted_part.iloc[0]['part_name']}")
         st.write(predicted_part.drop(columns=['part_name_clean']))
     else:
-        st.error("⚠️ Part not found in database.")
+        st.error("Part not found in database.")
